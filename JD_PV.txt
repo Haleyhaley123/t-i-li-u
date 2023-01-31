@@ -1,0 +1,41 @@
+﻿
+* Lý thuyết
+
++ Bạn hiểu thế nào 1 class và 1 object trong c#
++ Bạn hiểu thế nào về OOP
+- Nêu các đặc điểm của cơ bản của OOP:
+- Kế thừa,đóng gói, đa hình, trừu tượng(nói rõ một chút về tính đa hình và trừu tượng)
++ Phân biệt abstract class và interface
++ Hiểu thế nào về biến static
++ Thế nào là overload và override
++ Phân biệt IQueryable và IEnumerable trong c#
++ Có mấy loại Index
+
+          Single-Column Index
+          Unique Index
+          Composite Index
+          Implicit Index
+
+- Clustered lưu sắp xếp theo vật lý (1,2,3 -> a,b,c)
+- NonClustered  lưu vị trí vật lý dạng tree (ko chứa giá trị) ,trỏ đến giá trị thật, tạo được tối đa 16
+- create clusterd index ten_index on table(cột)
++ Có mấy loại cấu trức dữ liệu trong c# kể tên mấy loại hay dùng
++ Bạn có biết ref và out trong c#
++ Delegate và Event khác nhau như thế nào lấy một ví dụ delegate?
++ Bạn biết solid không
+
+* Thực tiễn
+
++ Dự án bạn dùng cơ sở dữ liệu gì
++ Bạn dùng công nghệ gì để kết nối database
++ Bạn đóng vai trò gì trong dự án, giới thiệu về công việc cụ thể mà bạ code trong dự án chút
++ Gioi thiệu qua một chút về layout về kiến trúc dự án của bạn làm 
++ Đã làm và biết kiến trúc Microservice chưa
++ Có mấy loại authentication mà bạn biết, bạn dùng loại nào khi viết api
+- Learn codeDemo codeRss codeLife codeSearch code
+  Bearer token
+- Bearer role
++ Bạn đã bao giờ gặp bài toán tải từ vài chục nghìn đến vài trăm nghìn chưa, bạn xử lý nó như thế nào
++ Bạn có hay dùng linq không , có mấy kiểu linq
++ Bạn biết Dependency injection, cái hay nó là gì tại sao dùng DI, bạn đã đăng ký nó chưa , đăng ký thế nào
+* Một số bài toán trong dự án của mình cần giải quyết và hay gặp
