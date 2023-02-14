@@ -1405,7 +1405,7 @@ BEGIN
 	DEALLOCATE @MyCursor
 	RETURN @StringResult
 END
-
+------------Làm tròn số ROUND()
 
 
 
@@ -1455,3 +1455,78 @@ END
 - email: halt@niw.com.vn
 - pass: haley@niw400402
 
+
+- TỐI ƯU
++ Thu hẹp giá trị trả về (truy vấn các cột cụ thể trong bảng)
++ Sử dụng SQL Procedure: đối với những truy vấn thực hiện thường xuyên và có xử lý phức tạp:
+ = giảm lượng dữ liệu truyền đến Server, Stored được lưu sẵn ở phía server do k cần phải gửi cả câu lệnh sql tới server mà chỉ cần gửi tham số
+ = Được biên dịch ngay lần đầu chạy, những lần sau chạy sẽ sử dụng lại file đã biên dịch trước đó
+ = có thể dùng vòng for để gọi nhiều câu lệnh gửi lên server giúp tái sử dụng code
+ + Chỉ mực (Index) tăng truy vấn select và các mệnh đề where nhưng làm chậm việc dữ liệu nhập vào với các câu lệnh Insert và Update
+ + Result-cache: 
+ SELECT /*+ RESULT_CACHE */ department_id, avg(salary) avg_sal
+    FROM hr.employees
+   GROUP BY department_id
+   
+   
+   
+  T.GetProperties().ToList().ForEach(
+  (propertyInfo o) =>{
+  o.Name
+  }
+  );
+  
+  
+  
+  KIỂU DELEGATE
+  là biến lưu phương thức
+  Ví dụ:
+  public delegate void ShowLog(string message);// biến delegate
+  public static void Info(string s)
+  {
+  //code logic
+  }
+  public static void Method2(string m){
+  //code logic
+  }
+  satic void Main(string[] args){
+   ShowLog log = null;
+   log = Info //lưu phương thức Info vào biến delegate log
+   log("message của Info");//thi hành c1
+   log.Invoke("xinc chào);//thi hành c2
+   log.Method2;// biến log đc gán cho phương thức 2
+   log("message của method2");
+   //prr
+   log += Info;
+   log += Method2;
+   
+   //dùng Action 
+   Acction action // delegate void Kieu(); k có tham số truyền vào
+   Acction<string, in> action1 // delegate void Kieu(string s, int i);
+   Action<string> action2;
+   action2.Method2;
+   action2 += Info;
+   action2.Invoke("xin chào");
+   
+   //Function
+   Func<int>f1 // delegate int Kieu();
+   Func<string, double, string>f2; //delegate string Kieu(string s, double 2);// kiểu trả về đc liệt kê ở cuối cùng
+  }
+  
+  
+  <system.serviceModel>
+  <bindings>
+   <basicHttpBinding>
+    <binding name="serviceSignFileSoap" />
+    <binding name="serviceSignFileSoap1" />
+   </basicHttpBinding>
+  </bindings>
+  <client>
+   <endpoint address="http://10.111.125.83/Service/kyso/serviceEsign.asmx"
+    binding="basicHttpBinding" bindingConfiguration="serviceSignFileSoap"
+    contract="EsignService.serviceSignFileSoap" name="serviceSignFileSoap" />
+   <endpoint address="http://10.111.125.83/Service/kyso/serviceEsign.asmx"
+    binding="basicHttpBinding" bindingConfiguration="serviceSignFileSoap1"
+    contract="EsignService.serviceSignFileSoap" name="serviceSignFileSoap1" />
+  </client>
+ </system.serviceModel>
