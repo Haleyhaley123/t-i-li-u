@@ -1,0 +1,76 @@
+1. Phân biệt stack (Last in first out - LIFO), queue(First in first out - FIFO)
+		QUEUE
+			EnQueue: Thêm một bản ghi vào cuối hàng đợi, tương tự như việc có thêm người đến xếp hàng đợi mua vé.
+			DeQueue: Lấy ra bản ghi đầu tiên, tương tự việc người đứng đầu hàng đang được nhân viên bán vé.
+			IsEmpty: Kiểm tra hàng đợi có rỗng hay không, tương tự việc người khác hỏi bạn xem có ai đang xếp hàng mua vé hay không và bạn trả lời.
+			Front: Trở về bản ghi đầu tiên
+		STACK
+			push: thêm bản ghi, tương tự với việc bạn thêm một chiếc bát vào chồng.
+			pop: lấy bản ghi, tương tự lấy bát ra khỏi chồng
+			length: trả về số lượng bản ghi, tương ứng với chiều cao chồng bát.
+			peak: trở về bản ghi đầu tiên, tương ứng với việc bạn chạm tay vào chiếc bát trên cùng
+			
+ - dữ liệu bắn lên liên tục, server k thể xử lý đc thì queue xếp hàng first in first out
+2. Phân biệt class, structure
+		Struct là kiểu dữ liệu tham trị được lưu trong Stack.
+		Struct không hỗ trợ kế thừa
+		Không thể khai báo hàm khởi tạo(không đối số)
+		…
+		Classs :
+		Class là kiểu dữ liệu tham chiếu được lưu trong heap.
+		class có hỗ trợ kế thừa.
+		
+3. Interface, Abstract class (con kế thừa phải overai lại (kế thừa or viết lại))
+4. Đa hình và ví dụ
+5. Over loading, over riding (tính đa hình)
+override (abstract - trừu tượng, k định nghĩa lại thì base.)
+	
+	1. override: Kiểu dữ liệu trả về, tên phương thức, danh sách tham số của phương thức override và phương thức được override phải giống nhau.virtual
+		overload: Kiểu dữ liệu trả về của các phương thức overload có thể giống nhau hoặc khác nhau.
+					Số lượng tham số hoặc kiểu dữ liệu của tham số ở các phương thức overload phải khác nhau.
+	2. override: Không thể thu hẹp phạm vi truy cập(access modifier) của phương thức được override.
+		overload: Có thể mở rộng hoặc thu hẹp phạm vi truy cập(access modifier) của phương thức được overload.
+	3. override:Không thể overriding constructor method.
+		overload:  Overloading được constructor method.
+	4. override:  Chỉ thực hiện được đối với các class có quan hệ kế thừa. Do đó overriding thực hiện ở ngoài phạm vi của một class.
+		overload: Chỉ thực hiện trong cùng phạm vi, trong nội bộ của một class.
+
+6. SQL Profiler: tool sql ra đồ thị truy vấn và tgian truy vấn
+7. Đánh index:
+	- truy vấn nhanh
+	- updte delete insert chậm?
+k đánh index sẽ lưu theo kiểu nhị phân, index lưu dạng tree (key theo kiểu cây nhị phân)
+8. Tại sao sử dụng view lại nhanh (stored procudure quá lâu)
+	Khi truy vấn trong View có thể sẽ chậm hơn trong table
+	Bị phụ thuộc vào Table gốc, nếu Table gốc thay đổi cấu trúc thì đòi hỏi View cũng phải thiết kế lại cho phù hợp
+	View giúp ta tạo ra các bảng Ảo (Virtual Table) chứa các thông tin, dữ liệu đã được lữu trư sẵn cho người dùng sử dụng. 
+	Tuy nhiên, View không tồn tại như một cấu trúc lưu trữ dữ liệu trong csdl. Các View thường được sử dụng với các mục đích sau đây:
+		Sử dụng View để tập trung trên dữ liệu được xác định.
+		Sử dụng View để đơn giản hóa thao tác dữ liệu
+		Sử dụng View để tùy biến dữ liệu.
+		Sử dụng View để trích xuất dữ liệu tạo báo cáo.
+		Sử dụng View để bảo mật dữ liệu, che giấu thông tin.
+	Syntax: 
+		CREATE VIEW tên_view AS
+		SELECT column1, column2…..
+		FROM tên_bảng
+		[WHERE điều_kiện];
+		
+9. Update MVC4 -> ASP .Net Core (tool  .NET Upgrade Assistant)
+10. Các ý check list khi review code
+11. Union có giữ lại các row trùng nhau ko (chỉ loại bỏ những dòng bị trùng nếu tên, thứ tự các cột phải giống nhau và tổng các cột phải bằng nhau.
+
+12. Giữ lại routing ở ASP Net Core y hệt như MVC4? => Use MVC
+13. Phân biệt Dependence Injection, Dependence Inversion, Inversion Of Control?
+- Dependency Injection: một các để thực hiện Inversion Of Control (có thể xem là 1 design pattern)Các module phụ thuộc (dependency)sẽ được inject vào module cấp cao
+- Dependency Inversion: Đây là một nguyên lý để thiết kế và viết code.
+- Inversion of Control: Đây là một design pattern được tạo ra để code có thể tuân thủ nguyên lý Dependency Inversion. Có nhiều cách hiện thực pattern này: ServiceLocator, Event, Delegate, … Dependency Injection là một trong các cách đó.
+14. SOLID => Single responsibility principle (một class chỉ giữ 1 nhiệm vụ duy nhất)
+			 Open/close principle (có thể mở rộng 1 class nhưng k đc sửa đổi bên trong class đó (viết class mới kế thừa class cũ))
+			 Liskov substitution principle (trong 1 ctrinh các object của class con có thể thay thế class cha mà k làm thay đổi tính đúng đắn của ctrinh)
+			 Interface segregation (thay vì dùng 1 interface lớn, nên tách thành nhiều interface nhỏ, với nhiều mục đích cụ thể)
+			 Dependency inversion principle (các module cấp cao k nên phụ thuộc vào các modules cấp thấp
+15. Có 2 model khác nhau, viết query để trả về 1 List có data giống nhau
+
+static chạy ctrinh khởi tạo k giải phóng
+class khởi tạo ra 1 vùng nhớ => kết thúc ctrinh giải phóng
