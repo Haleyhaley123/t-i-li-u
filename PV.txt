@@ -1,0 +1,109 @@
+
+* Lý thuyết
+
++ Bạn hiểu thế nào 1 class và 1 object trong c#
+--A class is a logical unit or blueprint that contains fields, methods and properties. Class members are:
+	Một lớp là một đơn vị logic hoặc bản thiết kế có chứa các trường, phương thức và thuộc tính. Các thành viên trong lớp là:
+1. Constructor (name is similar class name) is a method in the class which gets executed when a class object is create.
+	Constructor (tên tương tự tên lớp) là một phương thức trong lớp được thực thi khi một đối tượng lớp được tạo.
+2. Field is a variable of any type. It is basically the data.
+	Trường là một biến có kiểu bất kỳ. Về cơ bản nó là dữ liệu.
+3. Property is a member that provides helps in read and write of private field.
+	Thuộc tính là thành viên cung cấp trợ giúp đọc và ghi của trường riêng.
+4. A method is a code block that contains a series of statements.
+	Một phương thức là một khối mã chứa một loạt các câu lệnh.
+--- An Object is an INSTANCE of class./Một đối tượng là một thể hiện của lớp.
++ Bạn hiểu thế nào về OOP
+1. Abstraction Modeling the relevant attributes and interactions of entities as classes to define an abstract representation of a system.
+	Trừu tượng Mô hình hóa các thuộc tính và tương tác có liên quan của các thực thể dưới dạng các lớp để xác định một biểu diễn trừu tượng của một hệ thống.
+2. Encapsulation Hiding the internal state and functionality of an object and only allowing access through a public set of functions.
+	Đóng gói Ẩn trạng thái bên trong và chức năng của một đối tượng và chỉ cho phép truy cập thông qua một bộ chức năng công khai.
+3. Inheritance Ability to create new abstractions based on existing abstractions.
+	Kế thừa Khả năng tạo trừu tượng mới dựa trên trừu tượng hiện có.
+4. Polymorphism Ability to implement inherited properties or methods in different ways across multiple abstractions.
+	Đa hình Khả năng thực hiện các thuộc tính hoặc phương thức kế thừa theo những cách khác nhau trên nhiều trừu tượng.
+- Nêu các đặc điểm của cơ bản của OOP:
+- Kế thừa,đóng gói, đa hình, trừu tượng(nói rõ một chút về tính đa hình và trừu tượng)
++ Phân biệt abstract class và interface
+1. Abstract class contains both Declaration and Definition of methods
+	Lớp trừu tượng chứa cả Khai báo và Định nghĩa các phương thức
+	Interface contains only Declaration of methods 
+	Giao diện chỉ chứa Khai báo các phương thức
+2. Abstract class can contain methods, field, constants, constructor, static members.
+	Lớp trừu tượng có thể chứa các phương thức, trường, hằng số, hàm tạo, thành viên tĩnh, phương thức.
+	Interface can contain undefined methods only nothing else.
+	Giao diện chỉ có thể chứa các phương thức không xác định.
+3. Abstract class does not support Multiple inheritance
+	Lớp trừu tượng không hỗ trợ Đa kế thừa
+	Interface supports multiple inheritance
+	Giao diện hỗ trợ đa kế thừa
+	
++ when to use interface and when abstract class?
+	1. Abstract class is a good choice when you are sure some methods are concrete/defined and must be implemented in the same way in all derived classes.
+	Lớp trừu tượng là một lựa chọn tốt khi bạn chắc chắn rằng một số phương thức là cụ thể/được định nghĩa và phải được triển khai theo cùng một cách trong tất cả các lớp dẫn xuất.
+	2. An interface is good choice when you know a method has to be there, but it can be implemented different by independent derined classes.
+	Một giao diện là lựa chọn tốt khi bạn biết một phương thức phải ở đó, nhưng nó có thể được triển khai khác nhau bởi các lớp dẫn xuất độc lập.
++ Hiểu thế nào về biến static
+	1.Được khởi tạo 1 lần duy nhất ngay khi biên dịch chương trình.
+	2.Có thể dùng chung cho mọi đối tượng.
+	3.Được gọi thông qua tên lớp.
+	4.Được huỷ khi kết thúc chương trình.
++ Thế nào là overload và override
+	1. override: Kiểu dữ liệu trả về, tên phương thức, danh sách tham số của phương thức override và phương thức được override phải giống nhau.virtual
+		overload: Kiểu dữ liệu trả về của các phương thức overload có thể giống nhau hoặc khác nhau.
+					Số lượng tham số hoặc kiểu dữ liệu của tham số ở các phương thức overload phải khác nhau.
+	2. override: Không thể thu hẹp phạm vi truy cập(access modifier) của phương thức được override.
+		overload: Có thể mở rộng hoặc thu hẹp phạm vi truy cập(access modifier) của phương thức được overload.
+	3. override:Không thể overriding constructor method.
+		overload:  Overloading được constructor method.
+	4. override:  Chỉ thực hiện được đối với các class có quan hệ kế thừa. Do đó overriding thực hiện ở ngoài phạm vi của một class.
+		overload: Chỉ thực hiện trong cùng phạm vi, trong nội bộ của một class.
++ Phân biệt IQueryable và IEnumerable trong c#
+	IEnumerable: câu lệnh truy vấn sẽ đc thực hiện trên máy chủ và trả về cho client. Client thực hiện lọc.
+	phù hợp với Linq to Object và Linq to XML,không hỗ trợ custom query, nằm trong namespace System.Collections
+	có thể duyệt cac phần tử chỉ 1 chiều tiến lên, nó không thể duyệt ngược lại giữa các phần tử.
+	IQueryable: câu lệnh truy vấn đc thực hiện trên máy chủ, lọc trên máy chủ => trả về dữ liệu cho client.
+	nằm trong namespace System.Linq
+	có thể di chuyển 1 chiều tiến lên trong collection, nó không thể move back lại.
++ Có mấy loại Index
+
+          Single-Column Index (tạo index với 1 cột - CREATE INDEX name_index ON Table (column_name))
+          Unique Index (Tạo index cho cột là trường duy nhất - CREATE UNIQUE INDEX index_name ON Table (column_name);
+          Composite Index (tương tự như single-column index, nhưng tạo index đc với nhiều cột - CREATE INDEX name_index ON table (colmn1, colmn2);
+          Implicit Index (chỉ mục ẩn) (index được tạo ra khi tạo bảng, được tạo tự động với khoá chính và ràng buộc duy nhất)
+
+- Clustered lưu sắp xếp theo vật lý (1,2,3 -> a,b,c) - CREATE CLUSTERED INDEX name_index ON table(column ASC/desc)
+- NonClustered  lưu vị trí vật lý dạng tree (ko chứa giá trị) ,trỏ đến giá trị thật, tạo được tối đa 16 - CREATE NONCLUSTERED INDEX name_index ON table(column ASC/desc)
+
++ Có mấy loại cấu trức dữ liệu trong c# kể tên mấy loại hay dùng
+  1. Collection; Mảng một chiều, mảng nhiều chiều; ArrayList, List, SortedList; Linked list; stack; queue; Hashtable, Dictionary
++ Bạn có biết ref và out trong c#
+	1.ref bắt buộc phải là một biến (không thể truyền vào một hằng vì hằng là giá trị không thay đổi), phải được khởi tạo giá trị trước khi truyền vào.
+	out sẽ không cần khởi tạo giá trị ban đầu, parameter đó phải được khởi tạo ngay bên trong lời gọi hàm
++ Delegate và Event khác nhau như thế nào lấy một ví dụ delegate?
+	1.Delegate là con trỏ hàm tham chiếu tới một hay nhiều phương thức lúc thực hiện,
+	độc lập và không phụ thuộc vào event,
+	gồm các phương thức Combine() và Remove()
+	2. Event là kỹ thuật cảnh báo dựa vào delegate, phụ thuộc vào delegate và không thể tạo nếu thiếu delegate
+	AddEventHandler() và RemoveEventHandler() 
++ Bạn biết solid không
+
+* Thực tiễn
+
++ Dự án bạn dùng cơ sở dữ liệu gì
++ Bạn dùng công nghệ gì để kết nối database
++ Bạn đóng vai trò gì trong dự án, giới thiệu về công việc cụ thể mà bạ code trong dự án chút
++ Gioi thiệu qua một chút về layout về kiến trúc dự án của bạn làm 
++ Đã làm và biết kiến trúc Microservice chưa
++ Có mấy loại authentication mà bạn biết, bạn dùng loại nào khi viết api
+- Learn codeDemo codeRss codeLife codeSearch code
+  Bearer token
+- Bearer role
++ Bạn đã bao giờ gặp bài toán tải từ vài chục nghìn đến vài trăm nghìn chưa, bạn xử lý nó như thế nào
++ Bạn có hay dùng linq không , có mấy kiểu linq
+- Phần tử: FirstOrDefault, LastOrDefault, ..
+- Tập hợp: Distinct, Except, Intersect, Union
+- Phân vùng: Skip, Take,..
+- Liên kết: Concat.
++ Bạn biết Dependency injection, cái hay nó là gì tại sao dùng DI, bạn đã đăng ký nó chưa , đăng ký thế nào
+* Một số bài toán trong dự án của mình cần giải quyết và hay gặp

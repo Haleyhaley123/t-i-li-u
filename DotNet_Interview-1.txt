@@ -1,0 +1,41 @@
+Phân biệt stack, queue
+
+Phân biệt class, structure
+
+Interface, Abstract class
+
+Đa hình và ví dụ
+
+Over loading, over riding
+	1. override: Kiểu dữ liệu trả về, tên phương thức, danh sách tham số của phương thức override và phương thức được override phải giống nhau.virtual
+		overload: Kiểu dữ liệu trả về của các phương thức overload có thể giống nhau hoặc khác nhau.
+					Số lượng tham số hoặc kiểu dữ liệu của tham số ở các phương thức overload phải khác nhau.
+	2. override: Không thể thu hẹp phạm vi truy cập(access modifier) của phương thức được override.
+		overload: Có thể mở rộng hoặc thu hẹp phạm vi truy cập(access modifier) của phương thức được overload.
+	3. override:Không thể overriding constructor method.
+		overload:  Overloading được constructor method.
+	4. override:  Chỉ thực hiện được đối với các class có quan hệ kế thừa. Do đó overriding thực hiện ở ngoài phạm vi của một class.
+		overload: Chỉ thực hiện trong cùng phạm vi, trong nội bộ của một class.
+
+SQL Profiler
+
+Đánh index:
+	- truy vấn nhanh
+	- updte delete insert chậm?
+
+Tại sao sử dụng view lại nhanh
+
+
+Update MVC4 -> ASP Net Core
+
+Các ý check list khi review code
+
+Union có giữ lại các row trùng nhau ko
+
+Giữ lại routing ở ASP Net Core y hệt như MVC4? => Use MVC
+
+Phân biệt Dependence Injection, Dependence Inversion, Inversion Of Control?
+
+SOLID => L...?
+
+Có 2 model khác nhau, viết query để trả về 1 List có data giống nhau
